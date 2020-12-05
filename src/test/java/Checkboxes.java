@@ -18,27 +18,16 @@ public class Checkboxes{
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         driver = new ChromeDriver();
         driver.get("http://the-internet.herokuapp.com/checkboxes");
+        //qweqweqwew
     }
 
     @AfterMethod(alwaysRun = true)
     public void browserTearDown() {
         driver.quit();
         driver = null;
+
     }
 
-    @Test(description = "Check if the first checkbox is unchecked, check first checkbox, check if it is checked." +
-            "Check if the second checkbox is checked, do uncheck, check if it is unchecked.")
-    public void checkingAndUncheckingCheckboxes() {
-        ArrayList<WebElement> checkboxesList = new ArrayList<>(driver.findElements(By.tagName("input"))); //Finding the checkboxes
 
-        WebElement firstCheckbox = checkboxesList.get(0); //Getting the first checkbox
-        Assert.assertFalse(firstCheckbox.isSelected()); //Checking if the first checkbox is unchecked
-        firstCheckbox.click(); //Checking the first checkbox
-        Assert.assertTrue(firstCheckbox.isSelected()); //Checking if the first checkbox is checked
-
-        WebElement secondCheckbox = checkboxesList.get(1); //Getting the second checkbox
-        Assert.assertTrue(secondCheckbox.isSelected()); //Checking if the second checkbox is checked
-        secondCheckbox.click(); //Unchecking the second checkbox
-        Assert.assertFalse(secondCheckbox.isSelected()); //Checking if the second checkbox is unchecked
     }
-}
+

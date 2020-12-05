@@ -1,3 +1,6 @@
 .idea
-pom.xml
+
 HWFinal.iml
+.target/
+*.exe
+*.class
